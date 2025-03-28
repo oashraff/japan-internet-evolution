@@ -3,6 +3,8 @@
 A responsive web application exploring the transformative journey of internet development in Japan from 2005 to the present day. 
 The project showcases key milestones, comprehensive analysis, and a knowledge hub containing research, multimedia content, and notable figures.
 
+[Live Demo](https://japan-internet-evolution.vercel.app/)
+
 ## Project Overview
 
 This project provides an interactive platform to explore Japan's digital transformation through:
