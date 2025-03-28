@@ -16,6 +16,7 @@ app.use(express.json());
 // Serve static files from the "images" folder under the '/images' route
 app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use(express.static(path.join(__dirname, '.')));
+app.use(express.static(path.join(__dirname, '../')));
 
 // In-memory data store for event details
 const eventDetails = [
@@ -691,6 +692,6 @@ process.on('SIGINT', () => {
 });
 
 // Start the API server
-app.listen(port, () => {
-  console.log(`API server is running on port ${port}`);
+app.listen(process.env.PORT, () => {
+  console.log(`API server is running on port ${process.env.PORT}`);
 });
