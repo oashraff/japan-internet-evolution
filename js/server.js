@@ -15,6 +15,7 @@ app.use(express.json());
 
 // Serve static files from the "images" folder under the '/images' route
 app.use('/images', express.static(path.join(__dirname, 'images')));
+app.use(express.static(path.join(__dirname, '.')));
 
 // In-memory data store for event details
 const eventDetails = [
@@ -26,12 +27,12 @@ const eventDetails = [
     analysis: "Japan's broadband transformation by 2005 marked a significant milestone in digital infrastructure development. According to the Ministry of Internal Affairs and Communications (2020), aggressive policies and investments led to widespread fiber-optic deployment, achieving one of the highest broadband penetration rates globally. As detailed by Naito & Hausman (2005), Japan's ICT initiatives established innovative frameworks for future digital advancements, influencing both technological infrastructure and socio-economic development. This period saw broadband become an integral part of Japanese society, fundamentally changing how people accessed information and services.\n\nThe Ministry's data further revealed that by 2005, Japan had achieved remarkable broadband adoption rates, with fiber-optic penetration reaching unprecedented levels in urban areas. Naito & Hausman's research highlighted how government policies, particularly the e-Japan Strategy, created a competitive market environment that drove down costs while improving service quality, making high-speed internet accessible to a broader population segment.",
     images: [
       {
-        url: "http://127.0.0.1:5500/images/analysis/broadband1.jpg",
+        url: "/images/analysis/broadband1.jpg",
         caption: "Evolution of Broadband Adoption (2001–2010)",
         imageSource: "Ministry of Internal Affairs and Communications et al. (2010)"
       },
       {
-        url: "http://127.0.0.1:5500/images/analysis/broadband2.jpg",
+        url: "images/analysis/broadband2.jpg",
         caption: "Geographical Difference of Broadband Services (2010)",
         imageSource: "Ministry of Internal Affairs and Communications & Population Census (2010)"
       }
@@ -58,12 +59,12 @@ const eventDetails = [
     analysis: "Research by Akiyoshi & Ono (2008) reveals that Japan's mobile internet adoption created a unique digital ecosystem, fundamentally transforming social and economic interactions. Their study in The Information Society journal documented how mobile internet diffusion patterns in Japan differed from global trends. This was further supported by Nagata's (2009) analysis in The Japan Times, which highlighted Japan's distinctive cell phone culture and its impact on social norms. The integration of mobile internet into daily life created new paradigms for communication and commerce, establishing patterns that would influence global mobile internet development.\n\nNagata's research particularly emphasized how Japan's early adoption of mobile internet services led to unique social phenomena, such as the emergence of mobile-first web design and novel communication patterns. The study highlighted how Japanese consumers' preference for mobile internet access shaped business strategies and service development, creating a model that would later influence global mobile internet trends.",
     images: [
       {
-        url: "http://127.0.0.1:5500/images/analysis/mobile1.jpg",
+        url: "/images/analysis/mobile1.jpg",
         caption: "Mobile Internet Usage in Asian Countries in 2012",
         imageSource: "Nielsen & Statista (2012)"
       },
       {
-        url: "http://127.0.0.1:5500/images/analysis/mobile2.jpg",
+        url: "/images/analysis/mobile2.jpg",
         caption: "Survey on How Frequently People Access Mobile Internet per Country",
         imageSource: "NAT Benchmark Survey, ET Benchmark Survey & APT Benchmark Survey (2010)"
       },
@@ -90,7 +91,7 @@ const eventDetails = [
     analysis: "Suryanegara & Miyazaki's (2010) research highlighted how Japanese operators strategically approached 4G implementation in a mature market, focusing on service quality and innovation. Dateki et al. (2016) later demonstrated how this transition laid crucial groundwork for future 5G developments. The 4G LTE rollout marked a significant technological leap, enabling high-speed mobile data services that transformed how businesses and consumers accessed digital content. This infrastructure advancement catalyzed innovations in mobile services and applications, setting new standards for mobile connectivity.\n\nThe research by Dateki et al. specifically detailed how Japanese operators' experience with 4G deployment informed their approach to 5G planning. Their analysis showed how early challenges in 4G implementation, such as network optimization and coverage expansion, provided valuable lessons that would later benefit 5G rollout strategies.",
     images: [
       {
-        url: "http://127.0.0.1:5500/images/analysis/japan-lte.jpg",
+        url: "/images/analysis/japan-lte.jpg",
         caption: "Evolution of NTT DoCoMo LTE Subscribers (2010-2012)",
         imageSource: "TheNextWeb Blog (2012)"
       }
@@ -117,7 +118,7 @@ const eventDetails = [
     analysis: "The European Technology Platform on Smart Systems Integration's 2008 report predicted IoT's transformative potential, which materialized in Japan through comprehensive integration across sectors. Kawamoto et al. (2014) documented how IoT adoption in Japan uniquely combined industrial efficiency with consumer applications. This dual focus on industrial and consumer IoT applications positioned Japan as a leader in smart city initiatives and automated systems, demonstrating how IoT could enhance both economic productivity and quality of life.\n\nKawamoto's research specifically highlighted Japan's distinctive approach to IoT implementation, emphasizing how cultural factors and existing technological infrastructure influenced adoption patterns. Their analysis revealed how Japan's experience with industrial automation created a foundation for rapid IoT integration, particularly in manufacturing and urban development contexts.",
     images: [
       {
-        url: "http://127.0.0.1:5500/images/analysis/iot.png",
+        url: "/images/analysis/iot.png",
         caption: "Growth of IoT devices (1993-2020)",
         imageSource: "Mufti, T. - ResearchGate (2020)"
       }
@@ -144,7 +145,7 @@ const eventDetails = [
     analysis: "Mori & Goto's (2018) review of national cybersecurity strategies revealed Japan's comprehensive approach to digital security. The National Center of Incident Readiness and Strategy for Cybersecurity's 2018 report outlined how Japan strengthened its cybersecurity framework through public-private partnerships and international collaboration. These initiatives were particularly crucial in protecting critical infrastructure and ensuring secure digital transformation across sectors, while maintaining public trust in digital services.\n\nThe NICS report further detailed Japan's proactive stance on cybersecurity, highlighting specific measures implemented to protect critical infrastructure and prepare for the 2020 Olympics. The strategy emphasized the importance of international cooperation and information sharing, establishing Japan as a leader in cybersecurity innovation and policy development.",
     images: [
       {
-        url: "http://127.0.0.1:5500/images/analysis/cybersecurity1.png",
+        url: "/images/analysis/cybersecurity1.png",
         caption: "Japan Cybersecurity Market (2018-2030)",
         imageSource: "BlueWave Consulting (2022)"
       }
@@ -171,7 +172,7 @@ const eventDetails = [
     analysis: "According to Knowledge Sourcing Intelligence's 2024 analysis, Japan's 5G ecosystem development has positioned the country at the forefront of next-generation connectivity. McKinsey & Company's 2018 study predicted how 5G would revolutionize sectors beyond traditional telecommunications. Their analysis proved accurate as 5G deployment has enabled innovations in areas such as autonomous vehicles, smart manufacturing, and augmented reality applications, fundamentally transforming both industry and consumer experiences.\n\nMcKinsey's research particularly emphasized how Japan's early investment in 5G infrastructure created opportunities for industrial innovation. The study detailed how Japanese companies leveraged 5G capabilities to develop new business models and enhance operational efficiency, setting benchmarks for global industry adoption of 5G technologies.",
     images: [
       {
-        url: "http://127.0.0.1:5500/images/analysis/5g-rollout.webp",
+        url: "/images/analysis/5g-rollout.webp",
         caption: "5G Availability: 2021 vs 2025 (Projected)",
         imageSource: "GSMA APAC 5G Forum (2024)"
       }
@@ -199,7 +200,7 @@ const notableFigures = {
       name: "Masayoshi Son",
       role: "CEO, SoftBank Group Corp.",
       bio: "Masayoshi Son's SoftBank was a significant player in broadband by 2005, driving competition and expansion.",
-      image: "http://127.0.0.1:5500/images/knowledge-hub/m-son.jpg",
+      image: "/images/knowledge-hub/m-son.jpg",
       links: [
         { label: "SoftBank Group Profile", url: "https://group.softbank/en/about/officer/son" }
       ]
@@ -210,7 +211,7 @@ const notableFigures = {
       name: "Hiroshi Mikitani",
       role: "CEO, Rakuten",
       bio: "Pioneered mobile commerce and digital services, accelerating mobile internet adoption.",
-      image: "http://127.0.0.1:5500/images/knowledge-hub/mikitani.jpg",
+      image: "/images/knowledge-hub/mikitani.jpg",
       links: [
         { label: "Rakuten Global Profile", url: "https://global.rakuten.com/corp/about/management.html" },
         { label: "Forbes Profile", url: "https://www.forbes.com/profile/hiroshi-mikitani/" }
@@ -220,7 +221,7 @@ const notableFigures = {
       name: "Masayoshi Son",
       role: "CEO, SoftBank Group Corp.",
       bio: "Son played a key role in promoting mobile internet adoption.",
-      image: "http://127.0.0.1:5500/images/knowledge-hub/m-son.jpg",
+      image: "/images/knowledge-hub/m-son.jpg",
       links: [
         { label: "SoftBank Group Profile", url: "https://group.softbank/en/about/officer/son" }
       ]
@@ -229,7 +230,7 @@ const notableFigures = {
       name: "Ryuji Yamada",
       role: "Former President & CEO, NTT DoCoMo",
       bio: "During his tenure, lead the largest mobile operator in Japan through the mobile internet transition.",
-      image: "http://127.0.0.1:5500/images/knowledge-hub/r-yamada.webp",
+      image: "/images/knowledge-hub/r-yamada.webp",
       links: [
         { label: "Crunchbase Profile", url: "https://www.crunchbase.com/person/ryuji-yamada" }
       ]
@@ -240,7 +241,7 @@ const notableFigures = {
       name: "Masao Nakamura",
       role: "Former President & CEO, NTT DoCoMo",
       bio: "During the 4G LTE rollout, he spearheaded the company's advancements in mobile technology.",
-      image: "http://127.0.0.1:5500/images/knowledge-hub/m-nakamura.jpg",
+      image: "/images/knowledge-hub/m-nakamura.jpg",
       links: [
         { label: "NTT Communications", url: "https://www.standard.co.uk/hp/front/docomo-of-japan-to-name-new-chief-6959952.html" }
       ]
@@ -251,7 +252,7 @@ const notableFigures = {
       name: "Jun Murai",
       role: "Father of Internet in Japan",
       bio: "Murai's early work laid the foundation for internet infrastructure, crucial for IoT emergence.",
-      image: "http://127.0.0.1:5500/images/knowledge-hub/j-murai.webp",
+      image: "/images/knowledge-hub/j-murai.webp",
       links: [
         { label: "Internet Hall of Fame Profile", url: "https://www.internethalloffame.org/inductee/jun-murai/" }
       ]
@@ -262,7 +263,7 @@ const notableFigures = {
       name: "Seiko Noda",
       role: "Former Minister of Internal Affairs and Communications",
       bio: "Noda was at the forefront of government initiatives to strengthen cybersecurity.",
-      image: "http://127.0.0.1:5500/images/knowledge-hub/s-noda.jpg",
+      image: "/images/knowledge-hub/s-noda.jpg",
       links: [
         { label: "Official Website", url: "https://noda-seiko.gr.jp/" }
       ]
@@ -271,7 +272,7 @@ const notableFigures = {
       name: "Nobuhiro Endo",
       role: "Former Chairman, NEC Corporation",
       bio: "Led the NEC Corporation, a major player in cybersecurity solutions in Japan, advocating for enhanced security measures",
-      image: "http://127.0.0.1:5500/images/knowledge-hub/n-endo.jpg",
+      image: "/images/knowledge-hub/n-endo.jpg",
       links: [
         { label: "The World Economic Forum Profile", url: "https://www.weforum.org/stories/authors/nobuhiro-endo/" }
       ]
@@ -282,7 +283,7 @@ const notableFigures = {
       name: "Kazuhiro Yoshizawa",
       role: "Former President & CEO, NTT DoCoMO",
       bio: "Yoshizawa was responsible for leading the 5G network deployment and strategy.",
-      image: "http://127.0.0.1:5500/images/knowledge-hub/k-yoshizawa.jpg",
+      image: "/images/knowledge-hub/k-yoshizawa.jpg",
       links: [
         { label: "GSMA Profile", url: "https://www.gsma.com/get-involved/working-groups/gsma_people/kazuhiro-yoshizawa-president/" }
       ]
