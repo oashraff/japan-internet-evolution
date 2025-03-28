@@ -4,7 +4,7 @@
 // Dynamic API URL based on the environment
 const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
   ? 'http://localhost:3000' 
-  : 'https://your-glitch-project-name.glitch.me';  
+  : '';  // Empty string will make API calls relative to current domain
 
 /* ==========================================================================
    Global Handlebars Helper Registrations

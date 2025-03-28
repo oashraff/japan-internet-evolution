@@ -692,6 +692,6 @@ process.on('SIGINT', () => {
 });
 
 // Start the API server
-app.listen(process.env.PORT, () => {
-  console.log(`API server is running on port ${process.env.PORT}`);
+app.listen(PORT, () => {
+  console.log(`API server is running on port ${PORT}`);
 });
