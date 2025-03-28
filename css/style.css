@@ -1,0 +1,958 @@
+/* ===================================================================
+   Root Variables (Colors, Typography, & Other Global Settings)
+   =================================================================== */
+   :root {
+    /* Colors */
+    --color-primary: #4a90e2;
+    --color-secondary: #50e3c2;
+    --color-tertiary: #f5a623;
+    --color-background: #f8f9fa;
+    --color-text: #333333;
+    --color-text-light: #ffffff;
+    --color-card-bg: #ffffff;
+    --card-shadow: rgba(0, 0, 0, 0.15);
+    --timeline-line-color: #e0e0e0;
+    
+    /* Typography */
+    --font-main: 'Poppins', sans-serif;
+  }
+  
+  /* ===================================================================
+     Reset & Base Styles
+     =================================================================== */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--font-main);
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+  }
+  
+  /* ===================================================================
+     Layout
+     =================================================================== */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* ===================================================================
+     Header & Navigation
+     =================================================================== */
+  .header {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-link {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: var(--color-primary);
+  }
+  
+  /* ===================================================================
+     Hero Section
+     =================================================================== */
+  .hero {
+    position: relative;
+    min-height: 100vh; 
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--color-primary);
+    overflow: hidden; 
+  }
+  
+  .hero .container {
+    padding-top: 0; 
+    padding-bottom: 0; 
+  }
+  
+  .hero__title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px #000;
+  }
+  
+  .hero__subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-shadow: 10px 10px 10px #000;
+  }
+  
+  /* Specific styles for smaller hero sections */
+  .hero--small {
+    min-height: auto;
+    padding: 0;
+    margin-top: 0;
+  }
+  
+  .hero--small h1 {
+    font-size: 2.5rem; 
+    margin-bottom: 0.5rem;
+    margin-top: 5rem;
+  }
+  
+  .hero--small p {
+    font-size: 1rem; 
+    margin-bottom: 0;
+  }
+  
+  .hero h1,
+  .hero p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* ===================================================================
+     Animation Keyframes & Utility Classes
+     =================================================================== */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fadeInDown {
+    animation: fadeInDown 1s ease-out;
+  }
+  
+  .animate-fadeInUp {
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  /* ===================================================================
+     Button Styles
+     =================================================================== */
+  .btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* ===================================================================
+     Section Title
+     =================================================================== */
+  .section__title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--color-primary);
+  }
+  
+  /* ===================================================================
+     Slider & Card Styles
+     =================================================================== */
+  .slider {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .slider__container {
+    display: flex;
+    transition: transform 0.3s ease;
+  }
+  
+  .slider__button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    font-size: 1.5rem;
+    padding: 0.75rem;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.slider__button:hover {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.slider__button--prev {
+    left: 0.5rem;
+}
+
+.slider__button--next {
+    right: 0.5rem;
+}
+
+.slider__button .sr-only + span {
+    display: inline-block;
+    line-height: 1;
+}
+  
+  .card {
+    background-color: var(--color-card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* ===================================================================
+     Footer
+     =================================================================== */
+  .footer {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+  }
+  
+  /* ===================================================================
+     Responsive Adjustments (General)
+     =================================================================== */
+  @media (max-width: 768px) {
+    .header nav {
+      flex-direction: column;
+    }
+    .header ul {
+      margin-top: 1rem;
+    }
+    .hero__title {
+      font-size: 2.5rem;
+    }
+  }
+  
+  /* ===================================================================
+     Timeline Styles (Horizontal Scrolling & Hover Effects)
+     =================================================================== */
+  .timeline-wrapper {
+    position: relative;
+    width: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: #4a90e2 #f0f0f0;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  .timeline-wrapper::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .timeline-wrapper::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 4px;
+  }
+  
+  .timeline-wrapper::-webkit-scrollbar-thumb {
+    background-color: #4a90e2;
+    border-radius: 4px;
+  }
+  
+  .timeline-track {
+    display: flex;
+    padding: 2rem 0;
+  }
+  
+  .timeline-item {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  .timeline-point {
+    transition: transform 0.3s ease;
+  }
+  
+  .timeline-item:hover .timeline-point {
+    transform: scale(1.5);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  /* Mobile responsiveness for Timeline */
+  @media (max-width: 640px) {
+    .timeline-wrapper {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  
+    .timeline-item {
+      width: 280px;
+      margin: 0 1rem;
+      padding-left: 2rem;
+    }
+  }
+  
+  /* ===================================================================
+     Creative Timeline Styles (Vertical Timeline with Cards)
+     =================================================================== */
+  .timeline-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+  
+  /* Central Timeline Line */
+  .timeline-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, #4a90e2, #50e3c2);
+    z-index: 1;
+  }
+  
+  /* Timeline Items */
+  .timeline-item {
+    position: relative;
+    margin: 2rem 0;
+  }
+  
+  /* Card Positioning */
+  .timeline-card {
+    background: var(--color-card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    cursor: pointer;
+    z-index: 2;
+    overflow: hidden;
+  }
+  
+  .card-arrow {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .timeline-card:hover {
+    transform: scale(1.02) translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .timeline-card:hover .card-arrow {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* "Serpentine" effect on larger screens */
+  @media (min-width: 768px) {
+    .timeline-card.left {
+      transform: translateX(-2rem);
+    }
+    .timeline-card.right {
+      transform: translateX(2rem);
+    }
+    .timeline-card:hover.left {
+      transform: scale(1.02) translateX(-1rem) translateY(-3px);
+    }
+    .timeline-card:hover.right {
+      transform: scale(1.02) translateX(1rem) translateY(-3px);
+    }
+  }
+  
+  /* Card Content */
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2d3748;
+    margin-bottom: 1rem;
+  }
+  
+  .card-description {
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  .media-container {
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 1rem;
+  }
+  
+  .card-media {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Card Positioning for Left & Right Alignment */
+  .timeline-card.left {
+    margin-right: auto;
+    transform: translateX(-2rem);
+  }
+  
+  .timeline-card.right {
+    margin-left: auto;
+    transform: translateX(2rem);
+  }
+  
+  /* Left cards - year above */
+  .timeline-card.left .year-marker {
+    right: -3.5rem;
+    flex-direction: column;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  /* Right cards - year below */
+  .timeline-card.right .year-marker {
+    left: -3.5rem;
+    flex-direction: column-reverse;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .year-label {
+    font-weight: bold;
+    color: var(--card-bg);
+    font-size: 1.2rem;
+    padding: 0.5rem;
+  }
+  
+  /* Additional Animation for Cards */
+  @keyframes fadeSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fadeIn {
+    opacity: 0;
+    animation: fadeSlideIn 0.6s ease-out forwards;
+  }
+  
+  /* ===================================================================
+     Mobile Header & Navigation
+     =================================================================== */
+  .mobile-header {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .mobile-menu {
+    transition: all 0.3s ease;
+  }
+  
+  .mobile-menu.active {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .mobile-menu {
+      background: white;
+      padding: 1rem 0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+  }
+  
+  /* ===================================================================
+     Mobile-First Responsive Design Adjustments
+     =================================================================== */
+  @media (max-width: 768px) {
+    /* Hero Section Adjustments */
+    .hero {
+      min-height: 70vh;
+      padding: 6rem 1rem 2rem;
+    }
+  
+    .hero h1 {
+      font-size: 2.5rem;
+      line-height: 1.2;
+    }
+  
+    .hero p {
+      font-size: 1.125rem;
+    }
+  
+    /* Timeline Adjustments */
+    .timeline-card {
+      width: 100%;
+      margin: 1rem 0;
+    }
+  
+    .timeline-line {
+      left: 1rem;
+    }
+  
+    .timeline-card.left,
+    .timeline-card.right {
+      margin-left: 2rem;
+    }
+  
+    /* Analysis Page Layout */
+    .container.mx-auto.px-4.flex {
+      flex-direction: column;
+    }
+  
+    .analysis__image {
+      display: block;
+      max-width: 100%;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  
+    /* Slider Adjustments */
+    .slider__button {
+      display: none;
+    }
+  
+    #milestones-slider {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      padding: 1rem;
+    }
+  
+    .card {
+      scroll-snap-align: center;
+      min-width: 80%;
+      margin-right: 1rem;
+    }
+  
+    /* Animations for mobile menu */
+    @keyframes slideIn {
+      from {
+        transform: translateY(-10px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  
+    .mobile-menu.active {
+      animation: slideIn 0.3s ease-out;
+    }
+  }
+  
+  /* ===================================================================
+     Mobile Timeline Adjustments
+     =================================================================== */
+  @media (max-width: 768px) {
+    .timeline-container {
+      /* padding-left: 5rem; */
+      padding-right: 1rem;
+    }
+  
+    .timeline-card {
+      width: 110%;
+      margin: 2rem 0;
+      transform: none !important;
+    }
+  
+    .timeline-card.left,
+    .timeline-card.right {
+      margin-left: 2rem;
+    }
+  
+    /* Maintain hover effects */
+    .timeline-card:hover {
+      transform: scale(1.02) translateX(0.5rem) !important;
+    }
+  
+    .timeline-card.left:hover,
+    .timeline-card.right:hover {
+      transform: scale(1.02) translateX(0.5rem) !important;
+    }
+  }
+  
+  /* ===================================================================
+     Mobile Analysis Page Adjustments
+     =================================================================== */
+  @media (max-width: 768px) {
+    .analysis-container {
+      flex-direction: column;
+    }
+  
+    aside.event-menu {
+      position: relative;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+  
+    main.content-area {
+      width: 100%;
+    }
+  
+    .analysis-card {
+      padding: 1rem;
+    }
+  
+    .image-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .analysis-image {
+
+      object-fit: contain;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .timeline-container {
+      padding-right: 1rem;
+    }
+  
+    .timeline-line {
+      left: 2rem;
+      width: 3px;
+    }
+  
+    .timeline-card {
+      width: 110%;
+      margin: 2rem 0;
+      transform: none !important;
+    }
+  
+    .timeline-card.left,
+    .timeline-card.right {
+      margin-left: 2rem;
+    }
+  
+    /* Adjust year marker for mobile */
+    .year-marker {
+      position: relative;
+      left: auto !important;
+      right: auto !important;
+      transform: none !important;
+      top: 0 !important;
+      margin-bottom: 0.5rem;
+    }
+  
+    /* Add year to card header */
+    .card-content {
+      position: relative;
+    }
+  
+    .card-content::before {
+      content: attr(data-year);
+      display: block;
+      font-weight: bold;
+      color: var(--color-card-bg);
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .md\:floating-navbar {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-radius: 9999px;
+      padding: 1rem 2rem;
+      width: 70%;
+      min-width: 600px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between; /* Add space between logo and links */
+      align-items: center;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    /* Analysis Page Layout */
+    .container.mx-auto.px-4.flex {
+      flex-direction: column;
+      padding: 1rem;
+    }
+  
+    /* Sidebar */
+    aside.w-1 {
+      width: 100%;
+      padding-right: 0;
+      margin-bottom: 2rem;
+    }
+  
+    /* Main Content */
+    main.w-3 {
+      width: 100%;
+    }
+  
+    /* Event Menu */
+    #event-menu button {
+      width: 100%;
+      padding: 1rem;
+      border-bottom: 1px solid #edf2f7;
+    }
+  
+    /* Analysis Content */
+    #analysis-content {
+      padding: 1rem;
+    }
+  
+    /* Article Content */
+    #analysis-content article {
+      padding: 1.5rem;
+    }
+  
+    /* Images Grid */
+    .grid.grid-cols-1.md\:grid-cols-2 {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  
+    /* Citations */
+    .space-y-4 li {
+      padding: 1rem;
+    }
+  
+    /* Hero Section Adjustments */
+    .hero.hero--small {
+      padding-top: 5rem;
+      padding-bottom: 2rem;
+    }
+  
+    .hero.hero--small h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+  
+    .hero.hero--small p {
+      font-size: 1rem;
+    }
+  
+    /* Additional Info Box */
+    .bg-blue-50 {
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+  }
+  
+  /* ===================================================================
+     Mobile Select Styles
+     =================================================================== */
+  @media (max-width: 768px) {
+    select#event-select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+      background-position: right 0.5rem center;
+      background-repeat: no-repeat;
+      background-size: 1.5em 1.5em;
+      padding-right: 2.5rem;
+    }
+  
+    select#event-select:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+    }
+  }
+  
+  /* ===================================================================
+     Utility Classes
+     =================================================================== */
+  .blur-overlay {
+    filter: blur(4px) brightness(0.7);
+    transform: scale(1.1); /* Prevent blur edges from showing */
+  }
+  
+  @media (max-width: 640px) {
+    #milestones-slider {
+      flex-direction: row; /* Stack cards horizontally on small screens */
+    }
+  
+    .card {
+      width: 100%; /* Make cards full width on mobile */
+      margin-bottom: 1rem; /* Add some space between cards */
+    }
+  }
+  
+  /* ===================================================================
+     Global Timeline Styles (Additional Vertical Timeline Styling)
+     =================================================================== */
+  /* ========================
+   Global Timeline Styles
+   ======================== */
+  .timeline-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+  
+  /* Vertical gradient line (centered) on desktop */
+  .timeline-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+  
+  .timeline-item {
+    position: relative;
+    margin: 2rem 0;
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Base Timeline Card (Mobile-First) */
+  .timeline-card {
+    background: var(--color-card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    cursor: pointer;
+    z-index: 2;
+    overflow: hidden;
+  }
+  
+  /* Card Arrow Indicator */
+  .card-arrow {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .timeline-card:hover .card-arrow {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Year Marker (Badge) – common styles */
+  .year-marker {
+    background: var(--color-primary);
+    color: #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    z-index: 2;
+  }
+  .timeline-card:hover .year-marker {
+    transform: scale(1.1);
+  }
+  
+  /* Mobile Adjustments */
+  @media (max-width: 768px) {
+    .timeline-container::before {
+      display: none;
+    }
+    
+    .timeline-card {
+      width: 100%;
+      margin: 2rem 0;
+      transform: none !important;
+    }
+    
+    .timeline-card .year-marker {
+      position: relative;
+      margin-bottom: 1rem;
+      z-index: 2;
+    }
+  }
+  

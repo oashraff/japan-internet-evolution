@@ -1,0 +1,19 @@
+{
+  "name": "japan-internet-evolution",
+  "version": "1.0.0",
+  "main": "js/server.js",
+  "scripts": {
+    "start": "node js/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "A responsive web application exploring the transformative journey of internet development in Japan from 2005 to the present day.  The project showcases key milestones, comprehensive analysis, and a knowledge hub containing research, multimedia content, and notable figures.",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}

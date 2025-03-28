@@ -1,0 +1,44 @@
+[
+  {
+    "year": "2005",
+    "title": "Broadband Expansion in Japan",
+    "description": "By 2005, Japan had become a leader in broadband technology, with extensive high-speed internet coverage in urban centers.",
+    "mediaURL": "images/home/broadband.jpg",
+    "keyDescription": "Japan becomes a leader in broadband technology with ntionwide hige-speed Innternet."
+  },
+  {
+    "year": "2008",
+    "title": "Mobile Internet Adoption",
+    "description": "Increased adoption of mobile internet services began to change the way people accessed digital content.",
+    "mediaURL": "images/home/mobile_internet.jpg",
+    "keyDescription": "Widespread adoption of mobile internet services changes digital content access."
+  },
+  {
+    "year": "2010",
+    "title": "4G LTE Rollout",
+    "description": "The rollout of 4G LTE networks provided a significant boost to mobile data speeds and connectivity across Japan.",
+    "mediaURL": "images/home/4g_lte.webp",
+    "keyDescription": "4G LTE networks rollout significantly boosts mobile data speeds and connectivity."
+  },
+  {
+    "year": "2013",
+    "title": "IoT Emergence",
+    "description": "The integration of IoT devices into everyday life started to transform urban infrastructure and consumer electronics.",
+    "mediaURL": "images/home/iot.jpeg",
+    "keyDescription": "Integration of IoT devices transforms urban infrastructure and consumer electronics."
+  },
+  {
+    "year": "2018",
+    "title": "Cybersecurity Enhancements",
+    "description": "With the expansion of internet services, Japan enhanced its cybersecurity measures to better protect data and privacy.",
+    "mediaURL": "images/home/cybersecurity.png",
+    "keyDescription": "Enhanced cybersecurity measures protect data and privacy amid internet service expansion."
+  },
+  {
+    "year": "2021",
+    "title": "5G Network Rollout",
+    "description": "The advent of 5G networks ushered in a new era of ultra-fast connectivity, low latency, and innovative applications.",
+    "mediaURL": "images/home/5g.jpg",
+    "keyDescription": "5G networks rollout introduces ultra-fast connectivity, low latency, and innovative applications."
+  }
+]
